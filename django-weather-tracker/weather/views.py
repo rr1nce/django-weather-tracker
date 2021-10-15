@@ -1,7 +1,7 @@
-import requests
 from django.shortcuts import render
 from .models import City
 from .forms import CityForm
+import requests
 
 
 def index(request):
@@ -16,7 +16,11 @@ def index(request):
             form.save()
     form = CityForm()
     cities = City.objects.all()
-    Cities = set(sorted([city['name'] for city in list(cities.values())]))
+    temp = sorted([city['name'] for city in list(cities.values())])
+    print(temp)
+    Cities = set()
+    for i in temp:
+        Cities.add(i)
     print(Cities)
 
     r = requests.get(url.format(city)).json()
@@ -50,5 +54,5 @@ def index(request):
     else:
         city_weather['quality'] = 'Hazardous'
     print(city_weather)
-    context = {'city_weather': city_weather, 'cities': Cities, 'form': form}
+    context = {'city_weather': city_weather, 'cities': temp, 'form': form}
     return render(request, 'weather/weather.html', context)

@@ -51,25 +51,60 @@ body {
 }
 
 /*--------------------------- search ---------------------------*/
+.search>input[type=text] {
+    font-size: 32px;
+    padding: 5px 30px;
+    border: 3px solid aliceblue;
+    border-radius: 34px;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    margin: -17% 0 0 0;
+}
+.search>input[type=text]:hover, .search>input[type=text]:focus {
+    border: 3px solid skyblue;
+}
 #myInput {
     font-size: 32px;
     padding: 5px 30px;
     border: 3px solid aliceblue;
     border-radius: 34px;
+    width: 50%;
     position: absolute;
+    left: 50%;
     margin: -17% 0 0 0;
-    left: 15%;
-    width: 70%;
-    text-align: center;
 }
 #myInput:focus, #myInput:hover {
     border: 3px solid skyblue;
+}   
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
-
-.btn {
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+.dropdown-content a{
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: none;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.show {
+    display: block;
+}
+button {
     font-size: 27px;
     position: absolute;
-    left: calc(75% - 3px);
+    left: calc(65% - 3px);
     border: 3px solid aquamarine 0%;
     margin: calc(-17% + 3px) 0 0 0;
     background-color: lightseagreen;
@@ -78,34 +113,8 @@ body {
     border-radius: 27px;
     width: 10%;
 }
-.btn:hover {
+button :hover {
     background-color: #23c4bb;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: 15%;
-    width: 70%;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    border: 1px solid #ddd;
-    z-index: 1;
-    top: calc(72% + 1px);
-    max-height: 42%;
-    overflow: hidden;
-}
-.dropdown-content a{
-    color: #000;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    
-}
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-.show {
-    display: block;
 }
 /*------------------------ weather info ------------------------*/
 .container {

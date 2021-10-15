@@ -6,4 +6,4 @@ class CityForm(ModelForm):
     class Meta:
         model = City
         fields = ['name']
-        widgets = {'name': TextInput(attrs={'class': 'search', 'id': 'input__search', 'list': 'cities', 'placeholder': 'Enter city...'})}
+        widgets = {'name': TextInput(attrs={'class': 'search', 'id': 'myInput', 'placeholder': 'Enter city...'})}
